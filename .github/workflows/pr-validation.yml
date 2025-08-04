@@ -33,29 +33,25 @@ jobs:
           cache-dependency-path: server/package-lock.json
 
       - name: Install dependencies
-        run: |
-          cd server
-          npm ci --prefer-offline --no-audit
+        working-directory: server
+        run: npm ci --prefer-offline --no-audit
 
       - name: TypeScript type checking
-        run: |
-          cd server
-          npm run typecheck
+        working-directory: server
+        run: npm run typecheck
 
       - name: Build validation
-        run: |
-          cd server
-          npm run build
+        working-directory: server
+        run: npm run build
 
       - name: Test execution
-        run: |
-          cd server
-          npm test
+        working-directory: server
+        run: npm test
         timeout-minutes: 3
 
       - name: Quick Framework Validation
+        working-directory: server
         run: |
-          cd server
           echo "Quick validation of framework compilation..."
 
           # Check if key modules compiled
@@ -67,8 +63,8 @@ jobs:
           fi
 
       - name: Server startup validation
+        working-directory: server
         run: |
-          cd server
           echo "Testing server startup capability..."
 
           # Verify build artifacts exist
@@ -242,13 +238,12 @@ jobs:
           cache-dependency-path: server/package-lock.json
 
       - name: Install dependencies
-        run: |
-          cd server
-          npm ci --prefer-offline --no-audit
+        working-directory: server
+        run: npm ci --prefer-offline --no-audit
 
       - name: Build and test
+        working-directory: server
         run: |
-          cd server
           npm run build
           npm test
 
@@ -263,8 +258,7 @@ jobs:
           fi
 
           # Check if package.json is valid
-          cd server
-          if ! npm run --silent > /dev/null 2>&1; then
+          if ! (cd server && npm run --silent > /dev/null 2>&1); then
             echo "❌ npm scripts validation failed"
             exit 1
           fi
