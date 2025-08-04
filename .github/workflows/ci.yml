@@ -33,30 +33,26 @@ jobs:
           cache-dependency-path: server/package-lock.json
       
       - name: Install dependencies
-        run: |
-          cd server
-          npm ci --prefer-offline --no-audit
+        working-directory: server
+        run: npm ci --prefer-offline --no-audit
       
       - name: TypeScript type checking
-        run: |
-          cd server
-          npm run typecheck
+        working-directory: server  
+        run: npm run typecheck
       
       - name: Build project
-        run: |
-          cd server
-          npm run build
+        working-directory: server
+        run: npm run build
       
       - name: Run server integration tests
-        run: |
-          cd server
-          npm run test:server-integration
+        working-directory: server
+        run: npm run test:server-integration
         timeout-minutes: 5
       
       - name: Validate MCP server startup (Unix)
         if: runner.os != 'Windows'
+        working-directory: server
         run: |
-          cd server
           timeout 10s npm run start:debug 2>&1 | head -20 || true
           exit_code=$?
           if [ $exit_code -eq 124 ]; then
@@ -68,8 +64,8 @@ jobs:
       
       - name: Validate MCP server startup (Windows)
         if: runner.os == 'Windows'
+        working-directory: server
         run: |
-          cd server
           $job = Start-Job -ScriptBlock { npm run start:debug }
           Start-Sleep -Seconds 10
           Stop-Job $job
@@ -105,31 +101,26 @@ jobs:
           cache-dependency-path: server/package-lock.json
       
       - name: Install dependencies
-        run: |
-          cd server
-          npm ci --prefer-offline --no-audit
+        working-directory: server
+        run: npm ci --prefer-offline --no-audit
       
       - name: Build project
-        run: |
-          cd server
-          npm run build
+        working-directory: server
+        run: npm run build
       
       - name: Run CAGEERF framework tests
-        run: |
-          cd server
-          npm run test:cageerf-framework
+        working-directory: server
+        run: npm run test:cageerf-framework
         timeout-minutes: 10
       
       - name: Run MCP tools tests
-        run: |
-          cd server
-          npm run test:mcp-tools
+        working-directory: server
+        run: npm run test:mcp-tools
         timeout-minutes: 10
       
       - name: Run performance and memory tests
-        run: |
-          cd server
-          npm run test:performance-memory
+        working-directory: server
+        run: npm run test:performance-memory
         timeout-minutes: 15
 
   code-quality:
@@ -148,9 +139,8 @@ jobs:
           cache-dependency-path: server/package-lock.json
       
       - name: Install dependencies
-        run: |
-          cd server
-          npm ci --prefer-offline --no-audit
+        working-directory: server
+        run: npm ci --prefer-offline --no-audit
       
       - name: Check for sensitive files
         run: |
@@ -163,8 +153,8 @@ jobs:
           fi
       
       - name: Validate TypeScript files
+        working-directory: server
         run: |
-          cd server
           find src -name "*.ts" -exec echo "Checking {}" \;
           if find src -name "*.js" | grep -q .; then
             echo "❌ JavaScript files found in TypeScript source directory"
@@ -175,8 +165,8 @@ jobs:
           fi
       
       - name: Check package.json consistency
+        working-directory: server
         run: |
-          cd server
           if npm ls --depth=0 >/dev/null 2>&1; then
             echo "✅ Package.json dependencies are consistent"
           else
@@ -186,8 +176,8 @@ jobs:
           fi
       
       - name: Validate build artifacts
+        working-directory: server
         run: |
-          cd server
           npm run build
           if [ -d "dist" ] && [ -f "dist/index.js" ]; then
             echo "✅ Build artifacts generated successfully"
