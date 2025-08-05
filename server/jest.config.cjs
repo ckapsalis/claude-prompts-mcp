@@ -7,6 +7,7 @@ module.exports = {
   testMatch: [
     '<rootDir>/tests/**/*.test.ts'
   ],
+  setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
   globals: {
     'ts-jest': {
       useESM: true,
