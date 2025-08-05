@@ -38,11 +38,6 @@ Thumbs.db
 *:Zone.Identifier
 *.Zone.Identifier
 
-# Test directories
-test/
-test-output/
-tests/
-
 # Admin UI (temporary)
 admin-ui/
 
@@ -58,3 +53,6 @@ report.*.json
 #Temporary test files
 server/test-server.js
 server/test-listprompts.mjs
+
+#Ignore cursor AI rules
+.cursor\rules\codacy.mdc
