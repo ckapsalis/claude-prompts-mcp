@@ -25,7 +25,7 @@
     "start:production": "node dist/index.js --quiet --transport=stdio",
     "start:development": "node dist/index.js --verbose --transport=sse",
     "help": "node dist/index.js --help",
-    "test": "jest",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
     "test:unit": "jest tests/unit",
     "test:integration": "jest tests/integration",
     "test:e2e": "jest tests/e2e",
