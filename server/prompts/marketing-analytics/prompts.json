@@ -135,6 +135,30 @@
           "required": false
         }
       ]
+    },
+    {
+      "id": "marketing_campaign_optimizer",
+      "name": "Marketing Campaign Optimizer",
+      "category": "marketing-analytics",
+      "description": "End-to-end campaign optimization workflow: performance analysis, audience insights, creative recommendations, and budget allocation",
+      "file": "marketing_campaign_optimizer.md",
+      "arguments": [
+        {
+          "name": "campaign_data",
+          "description": "Campaign performance data or Maya export",
+          "required": true
+        },
+        {
+          "name": "budget",
+          "description": "Available optimization budget",
+          "required": false
+        },
+        {
+          "name": "goals",
+          "description": "Campaign objectives (awareness, conversions, leads)",
+          "required": false
+        }
+      ]
     }
   ]
 }

@@ -284,6 +284,30 @@
           }
         }
       ]
+    },
+    {
+      "id": "competitive_intelligence_suite",
+      "name": "Competitive Intelligence Suite",
+      "category": "research-tools",
+      "description": "Complete competitive intelligence workflow: market analysis, competitor research, strategic insights, and actionable recommendations",
+      "file": "competitive_intelligence_suite.md",
+      "arguments": [
+        {
+          "name": "business_context",
+          "description": "Business description, industry, target market",
+          "required": true
+        },
+        {
+          "name": "competitor_list",
+          "description": "Known competitors to analyze",
+          "required": false
+        },
+        {
+          "name": "analysis_depth",
+          "description": "Basic, detailed, or comprehensive analysis",
+          "required": false
+        }
+      ]
     }
   ]
 }
