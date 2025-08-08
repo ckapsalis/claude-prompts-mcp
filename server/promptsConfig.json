@@ -79,6 +79,11 @@
       "id": "system",
       "name": "System",
       "description": "Prompts related to System"
+    },
+    {
+      "id": "marketing-analytics",
+      "name": "Marketing Analytics",
+      "description": "Prompts related to Marketing Analytics"
     }
   ],
   "prompts": [],
@@ -95,6 +100,7 @@
     "prompts/creative/prompts.json",
     "prompts/debugging/prompts.json",
     "prompts/content_processing/prompts.json",
-    "prompts/system/prompts.json"
+    "prompts/system/prompts.json",
+    "prompts/marketing-analytics/prompts.json"
   ]
 }

@@ -1,0 +1,140 @@
+{
+  "prompts": [
+    {
+      "id": "maya_conversion_audit",
+      "name": "Maya Conversion Audit",
+      "category": "marketing-analytics",
+      "description": "Comprehensive cross-platform conversion analysis identifying setup issues, naming inconsistencies, and platform-specific conversion mapping discrepancies through systematic evaluation",
+      "file": "maya_conversion_audit.md",
+      "arguments": [
+        {
+          "name": "timeframe",
+          "description": "Analysis timeframe (default: Last 30 days)",
+          "required": false
+        },
+        {
+          "name": "min_volume",
+          "description": "Minimum conversion volume threshold (default: 5 conversions)",
+          "required": false
+        },
+        {
+          "name": "value_threshold",
+          "description": "Minimum conversion value threshold (default: €1+)",
+          "required": false
+        },
+        {
+          "name": "platforms",
+          "description": "Specific platforms to analyze (default: All active platforms)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "maya_audit_phase1",
+      "name": "Maya Audit - Setup Health Assessment",
+      "category": "marketing-analytics",
+      "description": "Phase 1: Evaluate baseline conversion tracking completeness across Account Services, Campaign Types, and Conversion Names",
+      "file": "maya_audit_phase1.md",
+      "arguments": [
+        {
+          "name": "timeframe",
+          "description": "Analysis timeframe",
+          "required": false
+        },
+        {
+          "name": "min_volume",
+          "description": "Minimum conversion volume threshold",
+          "required": false
+        },
+        {
+          "name": "value_threshold",
+          "description": "Minimum conversion value threshold",
+          "required": false
+        },
+        {
+          "name": "platforms",
+          "description": "Specific platforms to analyze",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "maya_audit_phase2",
+      "name": "Maya Audit - Temporal Activity Analysis",
+      "category": "marketing-analytics",
+      "description": "Phase 2: Identify tracking inconsistencies over time through temporal analysis of conversion data",
+      "file": "maya_audit_phase2.md",
+      "arguments": [
+        {
+          "name": "timeframe",
+          "description": "Analysis timeframe",
+          "required": false
+        },
+        {
+          "name": "min_volume",
+          "description": "Minimum conversion volume threshold",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "maya_audit_phase3",
+      "name": "Maya Audit - Value Attribution Validation",
+      "category": "marketing-analytics",
+      "description": "Phase 3: Ensure proper conversion value setup and validate cross-service consistency",
+      "file": "maya_audit_phase3.md",
+      "arguments": [
+        {
+          "name": "value_threshold",
+          "description": "Minimum conversion value threshold",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "maya_audit_phase4",
+      "name": "Maya Audit - Cross-Platform Consistency Check",
+      "category": "marketing-analytics",
+      "description": "Phase 4: Validate naming and setup consistency across platforms, identify standardization needs",
+      "file": "maya_audit_phase4.md",
+      "arguments": []
+    },
+    {
+      "id": "maya_audit_facebook",
+      "name": "Maya Audit - Facebook Attribution Analysis",
+      "category": "marketing-analytics",
+      "description": "Facebook-specific attribution window analysis and cross-attribution validation with GA4 (conditional execution)",
+      "file": "maya_audit_facebook.md",
+      "arguments": []
+    },
+    {
+      "id": "maya_audit_deliverables",
+      "name": "Maya Audit - Final Deliverables Report",
+      "category": "marketing-analytics",
+      "description": "Generate comprehensive audit deliverables with actionable recommendations and critical issues summary",
+      "file": "maya_audit_deliverables.md",
+      "arguments": [
+        {
+          "name": "timeframe",
+          "description": "Analysis timeframe",
+          "required": false
+        },
+        {
+          "name": "min_volume",
+          "description": "Minimum conversion volume threshold",
+          "required": false
+        },
+        {
+          "name": "value_threshold",
+          "description": "Minimum conversion value threshold",
+          "required": false
+        },
+        {
+          "name": "platforms",
+          "description": "Specific platforms analyzed",
+          "required": false
+        }
+      ]
+    }
+  ]
+}
