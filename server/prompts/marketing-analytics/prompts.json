@@ -159,6 +159,30 @@
           "required": false
         }
       ]
+    },
+    {
+      "id": "maya_attribution_mapping",
+      "name": "Maya Attribution Source/Medium Taxonomy Mapping",
+      "category": "marketing-analytics",
+      "description": "WORKFLOW: Prerequisite source/medium taxonomy mapping across all marketing platforms. Maps GA4 attribution sources to platform-specific tracking for accurate cross-platform conversion validation. Must run before maya_conversion_audit for proper attribution comparison.",
+      "file": "maya_attribution_mapping.md",
+      "arguments": [
+        {
+          "name": "analysis_timeframe",
+          "description": "Analysis timeframe (default: last 3 months)",
+          "required": false
+        },
+        {
+          "name": "traffic_threshold",
+          "description": "Minimum session threshold (default: 100 sessions)",
+          "required": false
+        },
+        {
+          "name": "platform_focus",
+          "description": "Specific platforms to focus on (default: All integrated platforms)",
+          "required": false
+        }
+      ]
     }
   ]
 }
